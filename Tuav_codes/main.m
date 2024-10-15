@@ -8,7 +8,7 @@ clc;
 m = 2.84; % kg, drone mass
 g = 9.81; % m/s^2, gravity
 Ixx = 0.5192; 
-Iyy = 0.4929; 
+Iyy = 0.4929;  
 Izz = 0.0947; % kg/m^2, moments of inertia
 L = 0.405; % m, distance from propeller to com
 
@@ -89,13 +89,6 @@ l = 2; % Length scale for the drone representation
 % Initialize the current waypoint
 current_waypoint = 1;
 
-%% Initialize VideoWriter (Optional)
-% Uncomment the following lines if you wish to save the animation as a video
-% videoFilename = 'quadcopter_animation.mp4';
-% videoWriter = VideoWriter(videoFilename, 'MPEG-4');
-% videoWriter.FrameRate = 30;
-% open(videoWriter);
-
 %% Animation Loop
 figure;
 hold on;
@@ -150,9 +143,6 @@ for i = 1:length(t)
     trail = [trail; x_pos(i), y_pos(i), z_pos(i)];
     trail_handle = plot3(trail(:,1), trail(:,2), trail(:,3), 'Color', [1, 0.5, 0.5], 'LineWidth', 0.5);
 
-    % Capture the current frame (Optional for video)
-    % frame = getframe(gcf);
-    % writeVideo(videoWriter, frame);
 
     pause(0.03);
 
@@ -172,5 +162,3 @@ end
 % Add legend
 legend([trail_handle, desired_handle, start_handle], {'UAV Trail', 'Desired Locations', 'Start Point'}, 'FontSize', 14);
 
-% Close the video file (Optional)
-% close(videoWriter);
