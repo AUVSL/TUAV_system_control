@@ -26,7 +26,7 @@ This repository contains MATLAB code for simulating the nonlinear control of a q
 1. Clone this repository:
    ```bash
    git clone https://github.com/AUVSL/TUAV_system_control.git
-   cd tethered-quadcopter
+   cd TUAV_system_control
 2. Open MATLAB and set the cloned directory as your working folder.
 
 ## Usage
